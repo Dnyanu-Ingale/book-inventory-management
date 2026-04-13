@@ -4,25 +4,14 @@
   padding: 0;
 }
 
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
 body {
   font-family: Arial, sans-serif;
   background-color: #f5f7fb;
   color: #222;
-}
-
-#root {
-  min-height: 100vh;
-}
-
-.app {
-  padding: 40px;
-}
-
-h1 {
-  margin-bottom: 12px;
-  color: #1f3c88;
-}
-
-p {
-  font-size: 16px;
 }
