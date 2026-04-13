@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import BookTable from '../components/common/BookTable';
+import { useNavigate } from 'react-router-dom';
 
 function HomePage() {
   const [books, setBooks] = useState([
@@ -7,8 +8,10 @@ function HomePage() {
     { id: 2, title: 'Rich Dad Poor Dad', author: 'Robert Kiyosaki' },
   ]);
 
+  const navigate = useNavigate();
+
   const handleView = (book) => {
-    console.log('View:', book);
+  navigate(`/books/${book.id}`);
   };
 
   const handleEdit = (book) => {
