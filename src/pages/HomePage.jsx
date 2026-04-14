@@ -34,7 +34,7 @@ function HomePage() {
   };
 
   const handleEdit = (book) => {
-    console.log('Edit:', book);
+  navigate(`/books/edit/${book.id}`);
   };
 
   const handleDelete = (id) => {

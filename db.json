@@ -1,14 +1,14 @@
 {
   "books": [
     {
-      "id": "1",
       "title": "Atomic Habits",
       "author": "James Clear",
       "publisher": "Avery",
       "publishedDate": "2018-10-16",
-      "description": "A practical guide to building good habits and breaking bad ones.",
       "email": "publisher@avery.com",
-      "recommendedAge": 18
+      "recommendedAge": 18,
+      "description": "A practical guide to building good habits and breaking bad ones...",
+      "id": "1"
     },
     {
       "id": "2",

@@ -16,3 +16,8 @@ export const createBook = async (bookData) => {
   const response = await axios.post(API_BASE_URL, bookData);
   return response.data;
 };
+
+export const updateBook = async (id, bookData) => {
+  const response = await axios.put(`${API_BASE_URL}/${id}`, bookData);
+  return response.data;
+};
