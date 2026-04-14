@@ -1,7 +1,7 @@
 {
   "books": [
     {
-      "id": 1,
+      "id": "1",
       "title": "Atomic Habits",
       "author": "James Clear",
       "publisher": "Avery",
@@ -11,7 +11,7 @@
       "recommendedAge": 18
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "Rich Dad Poor Dad",
       "author": "Robert Kiyosaki",
       "publisher": "Plata Publishing",
@@ -21,7 +21,7 @@
       "recommendedAge": 16
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "The Alchemist",
       "author": "Paulo Coelho",
       "publisher": "HarperOne",
@@ -29,6 +29,17 @@
       "description": "A philosophical story about dreams, destiny, and finding your purpose.",
       "email": "contact@harperone.com",
       "recommendedAge": 15
+    },
+    {
+      "title": "Mrityunjay ",
+      "author": "Shivaji Sawant",
+      "publisher": "Mehta Publishing House",
+      "publishedDate": "1967-01-02",
+      "email": "",
+      "recommendedAge": 10,
+      "description": "Mrityunjay (Triumph Over Death) is a critically acclaimed, award-winning Marathi novel by Shivaji Sawant, centered on the life of Karna from the Mahabharata. Written as an autobiography, it explores Karna's struggles with identity, societal injustice, friendship, and virtue through multiple perspectives, including Karna, Kunti, Duryodhana, and Krishna.",
+      "id": "cnQZ8EtPdlc"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }

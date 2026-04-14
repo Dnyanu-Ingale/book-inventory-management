@@ -49,7 +49,10 @@ function HomePage() {
           <p>Manage your collection of books</p>
         </div>
 
-        <button className="primary-btn">
+        <button
+          className="primary-btn"
+          onClick={() => navigate('/books/add')}
+          >
           Add Book
         </button>
       </div>
