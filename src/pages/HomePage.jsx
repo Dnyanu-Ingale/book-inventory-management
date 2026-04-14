@@ -1,17 +1,36 @@
-import { useState } from 'react';
-import BookTable from '../components/common/BookTable';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import BookTable from '../components/common/BookTable';
+import { getAllBooks } from '../services/bookService';
 
 function HomePage() {
-  const [books, setBooks] = useState([
-    { id: 1, title: 'Atomic Habits', author: 'James Clear' },
-    { id: 2, title: 'Rich Dad Poor Dad', author: 'Robert Kiyosaki' },
-  ]);
-
   const navigate = useNavigate();
 
+  const [books, setBooks] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState('');
+
+  useEffect(() => {
+    const fetchBooks = async () => {
+      try {
+        setIsLoading(true);
+        setError('');
+
+        const data = await getAllBooks();
+        setBooks(data);
+      } catch (fetchError) {
+        setError('Failed to load books. Please try again.');
+        console.error('Error fetching books:', fetchError);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchBooks();
+  }, []);
+
   const handleView = (book) => {
-  navigate(`/books/${book.id}`);
+    navigate(`/books/${book.id}`);
   };
 
   const handleEdit = (book) => {
@@ -36,12 +55,17 @@ function HomePage() {
       </div>
 
       <div className="content-card">
-        <BookTable
-          books={books}
-          onView={handleView}
-          onEdit={handleEdit}
-          onDelete={handleDelete}
-        />
+        {isLoading && <p>Loading books...</p>}
+        {error && <p className="error-text">{error}</p>}
+
+        {!isLoading && !error && (
+          <BookTable
+            books={books}
+            onView={handleView}
+            onEdit={handleEdit}
+            onDelete={handleDelete}
+          />
+        )}
       </div>
     </section>
   );

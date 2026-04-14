@@ -70,3 +70,26 @@
   text-align: center;
   padding: 20px;
 }
+
+.error-text {
+  color: #d93025;
+  font-weight: 500;
+}
+
+.secondary-link {
+  display: inline-block;
+  margin-top: 16px;
+  color: #1f3c88;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.secondary-link:hover {
+  text-decoration: underline;
+}
+
+.details-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}

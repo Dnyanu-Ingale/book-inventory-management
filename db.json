@@ -1,0 +1,34 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "title": "Atomic Habits",
+      "author": "James Clear",
+      "publisher": "Avery",
+      "publishedDate": "2018-10-16",
+      "description": "A practical guide to building good habits and breaking bad ones.",
+      "email": "publisher@avery.com",
+      "recommendedAge": 18
+    },
+    {
+      "id": 2,
+      "title": "Rich Dad Poor Dad",
+      "author": "Robert Kiyosaki",
+      "publisher": "Plata Publishing",
+      "publishedDate": "1997-04-01",
+      "description": "A personal finance book about money, investing, and financial thinking.",
+      "email": "info@plata.com",
+      "recommendedAge": 16
+    },
+    {
+      "id": 3,
+      "title": "The Alchemist",
+      "author": "Paulo Coelho",
+      "publisher": "HarperOne",
+      "publishedDate": "1988-01-01",
+      "description": "A philosophical story about dreams, destiny, and finding your purpose.",
+      "email": "contact@harperone.com",
+      "recommendedAge": 15
+    }
+  ]
+}
