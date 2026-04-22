@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import BookTable from '../components/common/BookTable';
-import { getAllBooks } from '../services/bookService';
+import { deleteBook, getAllBooks } from '../services/bookService';
 
 function HomePage() {
   const navigate = useNavigate();
@@ -34,11 +34,29 @@ function HomePage() {
   };
 
   const handleEdit = (book) => {
-  navigate(`/books/edit/${book.id}`);
+    navigate(`/books/edit/${book.id}`);
   };
 
-  const handleDelete = (id) => {
-    console.log('Delete:', id);
+  const handleDelete = async (id) => {
+    const isConfirmed = window.confirm(
+      'Are you sure you want to delete this book?'
+    );
+
+    if (!isConfirmed) {
+      return;
+    }
+
+    try {
+      setError('');
+      await deleteBook(id);
+
+      setBooks((previousBooks) =>
+        previousBooks.filter((book) => book.id !== id)
+      );
+    } catch (deleteError) {
+      setError('Failed to delete book. Please try again.');
+      console.error('Error deleting book:', deleteError);
+    }
   };
 
   return (
@@ -52,7 +70,7 @@ function HomePage() {
         <button
           className="primary-btn"
           onClick={() => navigate('/books/add')}
-          >
+        >
           Add Book
         </button>
       </div>

@@ -21,3 +21,8 @@ export const updateBook = async (id, bookData) => {
   const response = await axios.put(`${API_BASE_URL}/${id}`, bookData);
   return response.data;
 };
+
+export const deleteBook = async (id, bookData) => {
+  const response = await axios.delete(`${API_BASE_URL}/${id}`, bookData);
+  return response.data;
+};

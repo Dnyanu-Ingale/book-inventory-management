@@ -31,14 +31,14 @@
       "recommendedAge": 15
     },
     {
-      "title": "Mrityunjay ",
+      "title": "Mrityunjaya",
       "author": "Shivaji Sawant",
-      "publisher": "Mehta Publishing House",
-      "publishedDate": "1967-01-02",
-      "email": "",
-      "recommendedAge": 10,
-      "description": "Mrityunjay (Triumph Over Death) is a critically acclaimed, award-winning Marathi novel by Shivaji Sawant, centered on the life of Karna from the Mahabharata. Written as an autobiography, it explores Karna's struggles with identity, societal injustice, friendship, and virtue through multiple perspectives, including Karna, Kunti, Duryodhana, and Krishna.",
-      "id": "cnQZ8EtPdlc"
+      "publisher": "Continental, Paperback",
+      "publishedDate": "1967-01-01",
+      "email": "abc@gmail.com",
+      "recommendedAge": 60,
+      "description": "Mrityunjay (Triumph Over Death) is a renowned Marathi novel by Shivaji Sawant based on the life of Karna, a central, tragic character from the Mahabharata. Written as an autobiography, the book explores Karna’s life, his struggle with casteism, loyalty to Duryodhana, and his philosophical battles, portraying him as a legendary \"winner over death\".....",
+      "id": "I3T45OwZtUM"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
