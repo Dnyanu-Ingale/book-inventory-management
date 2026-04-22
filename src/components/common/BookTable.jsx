@@ -14,7 +14,7 @@ function BookTable({ books, onView, onEdit, onDelete }) {
           {books.length === 0 ? (
             <tr>
               <td colSpan="3" className="no-data">
-                No books available
+                No books available. Click “Add Book” to create your first record.
               </td>
             </tr>
           ) : (
@@ -25,9 +25,7 @@ function BookTable({ books, onView, onEdit, onDelete }) {
                 <td className="actions">
                   <button onClick={() => onView(book)}>View</button>
                   <button onClick={() => onEdit(book)}>Edit</button>
-                  <button onClick={() => onDelete(book.id)}>
-                    Delete
-                  </button>
+                  <button onClick={() => onDelete(book.id)}>Delete</button>
                 </td>
               </tr>
             ))
