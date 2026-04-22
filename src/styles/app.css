@@ -195,3 +195,8 @@
 .secondary-link:hover {
   text-decoration: underline;
 }
+
+.field-error {
+  color: #e74c3c;
+  font-size: 13px;
+}

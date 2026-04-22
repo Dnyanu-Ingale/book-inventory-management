@@ -22,7 +22,7 @@ export const updateBook = async (id, bookData) => {
   return response.data;
 };
 
-export const deleteBook = async (id, bookData) => {
-  const response = await axios.delete(`${API_BASE_URL}/${id}`, bookData);
+export const deleteBook = async (id) => {
+  const response = await axios.delete(`${API_BASE_URL}/${id}`);
   return response.data;
 };

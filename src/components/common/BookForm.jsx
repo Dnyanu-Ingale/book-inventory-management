@@ -1,91 +1,111 @@
-function BookForm({ formData, onChange, onSubmit, isSubmitting, submitButtonText }) {
+function BookForm({
+  formData,
+  errors,
+  onChange,
+  onSubmit,
+  isSubmitting,
+  submitButtonText,
+}) {
   return (
     <form className="book-form" onSubmit={onSubmit}>
+      {/* Title */}
       <div className="form-group">
-        <label htmlFor="title">Title</label>
+        <label>Title</label>
         <input
-          id="title"
           name="title"
           type="text"
           value={formData.title}
           onChange={onChange}
-          placeholder="Enter book title"
         />
+        {errors.title && <p className="field-error">{errors.title}</p>}
       </div>
 
+      {/* Author */}
       <div className="form-group">
-        <label htmlFor="author">Author</label>
+        <label>Author</label>
         <input
-          id="author"
           name="author"
           type="text"
           value={formData.author}
           onChange={onChange}
-          placeholder="Enter author name"
         />
+        {errors.author && <p className="field-error">{errors.author}</p>}
       </div>
 
+      {/* Publisher */}
       <div className="form-group">
-        <label htmlFor="publisher">Publisher</label>
+        <label>Publisher</label>
         <input
-          id="publisher"
           name="publisher"
           type="text"
           value={formData.publisher}
           onChange={onChange}
-          placeholder="Enter publisher name"
         />
+        {errors.publisher && (
+          <p className="field-error">{errors.publisher}</p>
+        )}
       </div>
 
+      {/* Date */}
       <div className="form-group">
-        <label htmlFor="publishedDate">Published Date</label>
+        <label>Published Date</label>
         <input
-          id="publishedDate"
           name="publishedDate"
           type="date"
           value={formData.publishedDate}
           onChange={onChange}
         />
+        {errors.publishedDate && (
+          <p className="field-error">{errors.publishedDate}</p>
+        )}
       </div>
 
+      {/* Email */}
       <div className="form-group">
-        <label htmlFor="email">Publisher Email</label>
+        <label>Email</label>
         <input
-          id="email"
           name="email"
           type="email"
           value={formData.email}
           onChange={onChange}
-          placeholder="Enter publisher email"
         />
+        {errors.email && <p className="field-error">{errors.email}</p>}
       </div>
 
+      {/* Age */}
       <div className="form-group">
-        <label htmlFor="recommendedAge">Recommended Age</label>
+        <label>Recommended Age</label>
         <input
-          id="recommendedAge"
           name="recommendedAge"
           type="number"
           value={formData.recommendedAge}
           onChange={onChange}
-          placeholder="Enter recommended age"
         />
+        {errors.recommendedAge && (
+          <p className="field-error">{errors.recommendedAge}</p>
+        )}
       </div>
 
+      {/* Description */}
       <div className="form-group">
-        <label htmlFor="description">Description</label>
+        <label>Description</label>
         <textarea
-          id="description"
           name="description"
           rows="5"
           value={formData.description}
           onChange={onChange}
-          placeholder="Enter description"
         />
+        {errors.description && (
+          <p className="field-error">{errors.description}</p>
+        )}
       </div>
 
       <div className="form-actions">
-        <button type="submit" className="primary-btn" disabled={isSubmitting}>
+        <button
+          type="submit"
+          className="primary-btn"
+          disabled={isSubmitting}
+        >
           {isSubmitting ? 'Saving...' : submitButtonText}
         </button>
       </div>
