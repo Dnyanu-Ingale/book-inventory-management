@@ -39,6 +39,16 @@
       "recommendedAge": 60,
       "description": "Mrityunjay (Triumph Over Death) is a renowned Marathi novel by Shivaji Sawant based on the life of Karna, a central, tragic character from the Mahabharata. Written as an autobiography, the book explores Karna’s life, his struggle with casteism, loyalty to Duryodhana, and his philosophical battles, portraying him as a legendary \"winner over death\".....",
       "id": "I3T45OwZtUM"
+    },
+    {
+      "title": "Godaan",
+      "author": "Premchand",
+      "publisher": "Penguin Random House India",
+      "publishedDate": "1936-01-01",
+      "email": "xyc@f.com",
+      "recommendedAge": 77,
+      "description": "Hii...",
+      "id": "swAOLt8RBmg"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate, useParams, Link } from 'react-router-dom';
 import BookForm from '../components/common/BookForm';
 import { getBookById, updateBook } from '../services/bookService';
+import { validateBookForm } from '../utils/validation';
 
 const initialFormData = {
   title: '',
@@ -18,6 +19,7 @@ function EditBookPage() {
   const { id } = useParams();
 
   const [formData, setFormData] = useState(initialFormData);
+  const [errors, setErrors] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState('');
@@ -57,10 +59,22 @@ function EditBookPage() {
       ...previousData,
       [name]: value,
     }));
+
+    setErrors((previousErrors) => ({
+      ...previousErrors,
+      [name]: '',
+    }));
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
+    const validationErrors = validateBookForm(formData);
+    setErrors(validationErrors);
+
+    if (Object.keys(validationErrors).length > 0) {
+      return;
+    }
 
     try {
       setIsSubmitting(true);
@@ -84,7 +98,7 @@ function EditBookPage() {
     return (
       <section className="page">
         <div className="content-card">
-          <p>Loading book data...</p>
+          <p className="loading-text">Loading book data...</p>
         </div>
       </section>
     );
@@ -104,6 +118,7 @@ function EditBookPage() {
 
         <BookForm
           formData={formData}
+          errors={errors}
           onChange={handleChange}
           onSubmit={handleSubmit}
           isSubmitting={isSubmitting}
